@@ -2,6 +2,7 @@
 /** @flow */
 import cli from 'cli'
 import fs from 'fs'
+import rmdir from 'rimraf'
 
 type Params = {
   keep: number,
@@ -41,7 +42,7 @@ if (buildsContent.length > keep) {
   const toRemove = buildsContent.sort().slice(0, buildsContent.length - keep)
   for (const build of toRemove) {
     console.log('Removing build: ' + build)
-    !emulate && fs.rmdirSync(buildsFoler + '/' + build)
+    !emulate && rmdir.sync(buildsFoler + '/' + build)
   }
 }
 const lastBuildInFolder = parseInt(buildsContent.sort().pop())

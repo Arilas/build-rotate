@@ -1,6 +1,6 @@
 {
   "name": "build-rotate",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Rotate latest build",
   "main": "lib/index.js",
   "scripts": {
@@ -21,6 +21,7 @@
     "babel-register": "^6.24.1"
   },
   "dependencies": {
-    "cli": "^1.0.1"
+    "cli": "^1.0.1",
+    "rimraf": "^2.6.1"
   }
 }
