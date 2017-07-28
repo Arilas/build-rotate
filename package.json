@@ -1,0 +1,26 @@
+{
+  "name": "build-rotate",
+  "version": "0.0.1",
+  "description": "Rotate latest build",
+  "main": "lib/index.js",
+  "scripts": {
+    "dist": "babel -d lib/ src/",
+    "prepublish": "npm run dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "build-rotate": "./lib/index.js"
+  },
+  "author": "Alex Grand <alex@granted.name>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-register": "^6.24.1"
+  },
+  "dependencies": {
+    "cli": "^1.0.1"
+  }
+}
