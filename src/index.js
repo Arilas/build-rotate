@@ -36,7 +36,7 @@ if (emulate) {
   console.log('Keep: ', keep)
 }
 
-const buildsContent = fs.readdirSync(buildsFoler)
+const buildsContent = fs.readdirSync(buildsFoler).map(build => parseInt(build, 10))
 if (buildsContent.length > keep) {
   console.log('Found old builds')
   const toRemove = buildsContent.sort().slice(0, buildsContent.length - keep)
@@ -51,7 +51,7 @@ if (lastBuildInFolder !== build) {
 }
 
 try {
-  if (fs.statSync(latestLink).isDirectory()) {
+  if (fs.statSync(latestLink).isDirectory() || fs.statSync(latestLink).isSymbolicLink()) {
     console.log('Unlink old latest')
     !emulate && fs.unlinkSync(latestLink)
   }

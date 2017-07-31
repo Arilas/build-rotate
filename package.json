@@ -1,6 +1,6 @@
 {
   "name": "build-rotate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Rotate latest build",
   "main": "lib/index.js",
   "scripts": {
